@@ -26,8 +26,8 @@ etc/audio/Rx_ControlParams_EARPIECE_WIDEBAND.txt
 etc/audio/Rx_ControlParams_SECVOIP_BLUETOOTH_HEADSET.txt
 etc/audio/Rx_ControlParams_SECVOIP_EARPIECE_WIDEBAND.txt
 etc/audio/Rx_ControlParams_SECVOIP_SPEAKER_WIDEBAND.txt
-etc/audio/Rx_ControlParams_SECVOIP_WIRED_HEADPHONE_WIDEBAND. txt
-etc/audio/Rx_ControlParams_SECVOIP_WIRED_HEADSET_WIDEBAND.tx t
+etc/audio/Rx_ControlParams_SECVOIP_WIRED_HEADPHONE_WIDEBAND.txt
+etc/audio/Rx_ControlParams_SECVOIP_WIRED_HEADSET_WIDEBAND.txt
 etc/audio/Rx_ControlParams_SPEAKER_WIDEBAND.txt
 etc/audio/Rx_ControlParams_WIRED_HEADPHONE_WIDEBAND.txt
 etc/audio/Rx_ControlParams_WIRED_HEADSET_WIDEBAND.txt
