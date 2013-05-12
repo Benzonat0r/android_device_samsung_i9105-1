@@ -322,7 +322,7 @@ on boot
     chown system radio /sys/class/audio/earjack/select_jack
     chown system radio /sys/class/audio/earjack/key_state
     chown system radio /sys/class/audio/earjack/state
-    chown media system /synfcs/class/audio/earjack/reselect_jack
+    chown media system /sys/class/audio/earjack/reselect_jack
 
     # Permissions for touch
     chown system radio /sys/class/sec/tsp/cmd
