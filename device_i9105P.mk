@@ -65,8 +65,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
 # Misc other modules
 PRODUCT_PACKAGES += \
 	audio.a2dp.default \
