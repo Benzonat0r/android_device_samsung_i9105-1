@@ -47,4 +47,4 @@
 /dev/block/mmcblk0p11        0660   system     root  
 
 # NFC
-/dev/bcm2079x             0660    nfc        nfc
+/dev/bcm2079x              0660    nfc       nfc
