@@ -61,11 +61,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     device/samsung/i9105P/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
-
-# NFC firmware for BCM2079x
+# NFC firmware patches
 PRODUCT_COPY_FILES += \
-    hardware/broadcom/nfc/bcm2079x/bcm2079x_firmware.ncd:system/vendor/firmware/bcm2079x_firmware.ncd \
-    hardware/broadcom/nfc/bcm2079x/bcm2079x_pre_firmware.ncd:system/vendor/firmware/bcm2079x_pre_firmware.ncd
+        device/samsung/i9105P/nfc/BCM20791B4_002.005.010.0043.0000_Generic_I2C_NCD_signed_configdata.ncd:system/vendor/firmware/BCM20791B4_002.005.010.0043.0000_Generic_I2C_NCD_signed_configdata.ncd \
+        device/samsung/i9105P/nfc/BCM20791B4_002.005.010.0043.0000_Generic_PreI2C_NCD_signed_configdata.ncd:system/vendor/firmware/BCM20791B4_002.005.010.0043.0000_Generic_PreI2C_NCD_signed_configdata.ncd
 
 PRODUCT_PROPERTY_OVERRIDES += \
 
