@@ -40,30 +40,34 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	com.android.future.usb.accessory
 
-# NFC
+# NFC packages
 PRODUCT_PACKAGES += \
-    libnfc \
-    libnfc_jni \
-    Nfc \
-    Tag
-
-PRODUCT_COPY_FILES += \
-    packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
-    frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
+    libnfc-nci \
+    libnfc_nci_jni \
+    NfcNci \
+    Tag \
+    com.android.nfc_extras
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access.xml
+    NFCEE_ACCESS_PATH := device/samsung/i9105P/nfc/nfcee_access.xml
 else
-    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access_debug.xml
+    NFCEE_ACCESS_PATH := device/samsung/i9105P/nfc/nfcee_access_debug.xml
 endif
 
+# NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
-    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
+    $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    device/samsung/i9105P/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
 
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras
+# NFC firmware for BCM2079x
+PRODUCT_COPY_FILES += \
+    hardware/broadcom/nfc/bcm2079x/bcm2079x_firmware.ncd:system/vendor/firmware/bcm2079x_firmware.ncd \
+    hardware/broadcom/nfc/bcm2079x/bcm2079x_pre_firmware.ncd:system/vendor/firmware/bcm2079x_pre_firmware.ncd
+
+PRODUCT_PROPERTY_OVERRIDES += \
 
 # Misc other modules
 PRODUCT_PACKAGES += \

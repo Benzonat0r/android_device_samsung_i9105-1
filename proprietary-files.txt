@@ -62,7 +62,6 @@ etc/gps/glconfig.xml
 etc/gps.conf
 etc/media_codecs.xml
 etc/media_profiles.xml
-etc/router.xml
 etc/sensors.conf
 etc/somxreg.conf
 etc/srm.bin
