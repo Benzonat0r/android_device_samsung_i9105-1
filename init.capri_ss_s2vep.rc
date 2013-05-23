@@ -22,8 +22,8 @@ on init
     write /proc/vc-dnfo "sheight 800"
     write /proc/vc-dnfo "bpp 32"
     write /proc/vc-dnfo "layer 1"
-    write /proc/vc-dnfo "xdpi 184.727"
-    write /proc/vc-dnfo "ydpi 184.727"
+    write /proc/vc-dnfo "xdpi 217.714"
+    write /proc/vc-dnfo "ydpi 207.347"
     chmod 0660 /proc/vc-omx
     write /proc/vc-omx "color 2"
     chmod 0660 /proc/vc-hnfo
@@ -176,6 +176,15 @@ on boot
     chown system radio /sys/class/sensors/gyro_sensor/vendor
     chown system radio /sys/class/sensors/gyro_sensor/name
 
+    # Magnetic_sensor
+    chown system radio /dev/akm8975
+    chown system radio /sys/class/sensors/magnetic_sensor/raw_data
+    chown system radio /sys/class/sensors/magnetic_sensor/vendor
+    chown system radio /sys/class/sensors/magnetic_sensor/name
+
+    # Magnetic Sensor Calibration Mode Setting
+    write /sys/class/input/input2/static_matrix "9392 81 136 509 10738 41 -58 -1233 9906"
+
     # Vibetonz
     chmod 0660 /dev/tspdrv
     chown root shell /dev/tspdrv
@@ -273,24 +282,24 @@ on boot
     chmod 0660 /dev/mpuirq
     chmod 0660 /dev/timerirq
 
-    chown system system /dev/i2c-6
-    chmod 0660 /dev/i2c-6
+    chown system system /dev/i2c-0
+    chmod 0660 /dev/i2c-0
 
     chown root system /dev/proximity
     chmod 0660 /dev/proximity
-
-    chown system system /sys/class/input/input2/enable
-    chown system system /sys/class/input/input2/poll_delay
-    chmod 0660 /sys/class/input/input2/enable
-    chmod 0660 /sys/class/input/input2/poll_delay
 
     chown system system /sys/class/input/input3/enable
     chown system system /sys/class/input/input3/poll_delay
     chmod 0660 /sys/class/input/input3/enable
     chmod 0660 /sys/class/input/input3/poll_delay
 
+    chown system system /sys/class/input/input4/enable
+    chown system system /sys/class/input/input4/poll_delay
+    chmod 0660 /sys/class/input/input4/enable
+    chmod 0660 /sys/class/input/input4/poll_delay
+
     # SEC_PRODUCT_FEATURE_COMMON_USE_MULTISIM
-    setprop ro.multisim.simslotcount 2
+    setprop ro.multisim.simslotcount 1
 
     # for multi csc
     chown radio radio /proc/LinuStoreIII/efs_info
